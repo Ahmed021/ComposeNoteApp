@@ -13,7 +13,6 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
-
 class NotesViewModel(
     private val noteUseCases: NoteUseCases
 ) : ViewModel() {
@@ -45,7 +44,7 @@ class NotesViewModel(
                 }
             }
 
-            is NotesEvent.RestoreEvent -> {
+            is NotesEvent.RestoreNote -> {
                 viewModelScope.launch {
                     noteUseCases.addNote(recentlyDeletedNote ?: return@launch)
                     recentlyDeletedNote = null
