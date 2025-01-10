@@ -13,7 +13,6 @@ class NoteApp : Application() {
         startKoin {
             androidContext(this@NoteApp)
             androidLogger()
-
             modules(appModule)
         }
     }
